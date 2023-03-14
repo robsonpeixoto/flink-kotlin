@@ -182,7 +182,7 @@ under the License.
 					</execution>
 				</executions>
 				<configuration>
-					<jvmTarget>1.8</jvmTarget>
+					<jvmTarget>${target.java.version}</jvmTarget>
 				</configuration>
 			</plugin>
 			<plugin>
