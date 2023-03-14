@@ -171,6 +171,9 @@ under the License.
 				</executions>
 				<configuration>
 					<jvmTarget>${target.java.version}</jvmTarget>
+					<args>
+						<arg>-Xjsr305=strict</arg> <!-- Enable strict mode for JSR-305 annotations -->
+					</args>
 				</configuration>
 			</plugin>
 			<plugin>
