@@ -19,6 +19,7 @@
 package dev.robsonpeixoto;
 
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.sink.PrintSink;
 
 /**
  * Skeleton for a Flink DataStream Job.
@@ -58,6 +59,11 @@ public class DataStreamJob {
 		 * https://nightlies.apache.org/flink/flink-docs-stable/
 		 *
 		 */
+
+    // Simple example in Java
+    env.fromSequence(1, 10)
+      .map(el -> String.format("MY CURRENT VALUE IS %d", el)).name("Convert to String")
+      .sinkTo(new PrintSink<>("stderr", true)).name("Print on STDERR");
 
 		// Execute program, beginning computation.
 		env.execute("Flink Java API Skeleton");
